@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel='apple-touch-icon' href='img/icon-h.png' type='image/png' />
+<link rel='shortcut icon' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+<link rel='icon' href='img/icon-h.png' type='image/png' />
+<link rel='bookmark' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "viewport" content = "width = device-width, height = device-height, maximum-scale = 1.0, user-scalable = no" />
+
+<title>热工小笔记 V1.0</title>
+
+<link rel = "stylesheet" type = "text/css" href="css/style.css" />
+
+<script type = "text/javascript" src = "js/common.js"></script>
+<script type = "text/javascript" src = "js/note.js"></script>
+
+</head>
+
+<body onload = "initNote()">
+	
+<div class = "findblock" style = "display : none;">
+	<input type = "text" id = "find" maxlength = "16" style = "width : 98%;" onclick = "this.select();"></input><br />
+	<button type = "button" style = "width : 30%; height : 40px; position : absolute; left : 4px;" onclick = "findString()">查找</button>
+	<button type = "button" style = "width : 30%; height : 40px; position : absolute; right : 4px;" onclick = "endFind()">关闭</button>
+</div>
+
+<button type = "button" onclick = "findStart()" style = "position : absolute; right : 8px;">开始查找</button>
+<h2>热工小笔记</h2>
+
+<div id = "notelist"></div>
+
+<p>
+	<button type = "button" id = "pre" onclick = "prePage()" style = "display : none;">上一页</button>
+	<button type = "button" id = "next" onclick = "nextPage()">下一页</button><span id = "index" style = "margin-left : 5px;"></span>
+</p>
+<p>
+	<input type = "number" id = "jumpIndex" maxlength = "5" style = "width : 30%"></input>
+	<button type = "button" id = "jump" onclick = "jumpPage()">跳转！</button>
+</p>
+
+<hr />
+<small>当前版本：V1.0</small><br />
+GX Software 2018-2020
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<link rel='apple-touch-icon' href='img/icon-h.png' type='image/png' />
+<link rel='shortcut icon' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+<link rel='icon' href='img/icon-h.png' type='image/png' />
+<link rel='bookmark' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "viewport" content = "width = device-width, height = device-height, maximum-scale = 1.0, user-scalable = no" />
+
+<title>热元件查询 V1.0</title>
+
+<link rel = "stylesheet" type = "text/css" href="css/style.css" />
+
+<script type = "text/javascript" src = "js/common.js"></script>
+<script type = "text/javascript" src = "js/temperature.js"></script>
+
+</head>
+
+<body onload = "initTemp()">
+
+<h2>
+	热元件查询
+</h2>
+
+<p>
+	请选择元件类型：<br/>
+	<select id = "selectTemp" onchange = "changeType()"></select>
+</p>
+
+<p>
+	<span id = "tempUnit">请输入要查询的值：</span><br/>
+	<input type = "number" id = "raw" maxlength = "17" style = "width:75%;" onclick = "this.select();"></input>
+</p>
+
+<p id = "coldP">
+	请输入冷端温度（单位：℃）：<br/>
+	<input type = "number" id = "cold" maxlength = "17" style = "width:75%;" onclick = "this.select();"></input>
+</p>
+
+<p>
+	<input type = "radio" name = "single" id = "a" checked = true onclick = "changeType()"></input><label for = "a" id = "sa">根据测量值查温度</label><br/>
+	<input type = "radio" name = "single" id = "b" onclick = "changeType()"></input><label for = "b" id = "sb">根据温度查测量值</label>
+</p>
+
+<p>
+	<button type = "button" class = "allLength" onclick = "beginTemp()">开始查询！</button>
+</p>
+
+<h3>查询结果：</h3>
+<p id = "result"></p>
+
+<hr />
+<small>当前版本：V1.0</small><br />
+GX Software 2018-2020
+
+</body>
+</html>

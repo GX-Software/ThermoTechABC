@@ -1,0 +1,88 @@
+﻿
+body {
+	font-size : 120%;
+	font-family : Microsoft YaHei, SimHei, sans-serif;
+}
+
+button {
+	font-size : 100%;
+	font-family : Microsoft YaHei, SimHei, sans-serif;
+	height : 50px;
+}
+
+button.allLength {
+	width : 100%;
+}
+
+.small {
+	font-size : 80%;
+}
+
+input[type = "text"], input[type = "number"] {
+	font-size : 150%;
+	font-family : Microsoft YaHei, SimHei, sans-serif;
+	height : 40px;
+}
+
+select {
+	width : 75%;
+	font-size : 100%;
+	font-family : Microsoft YaHei, SimHei, sans-serif;
+}
+
+.findblock {
+	position : fixed;
+	left : 0;
+	top : 0;
+	z-index : 99;
+	background : #fff;
+	line-height : 50px;
+	height : 100px;
+	width : 100%;
+	border-color : #333;
+	border-width : 1px;
+	border-style : solid;
+}
+
+.notetitle {
+	background : #eee;
+	margin-top : 0;
+}
+
+/*默认表格*/
+table
+{
+	width:100%;
+	
+	border-spacing:0px;
+	border-style: solid;
+	border-color: #777777;
+	border-width: 1px;
+	
+	font-size: 1em;
+	border-collapse:collapse;
+}
+
+/*用于蛋疼的IE*/
+th, td
+{
+	border-style: solid;
+	border-color: #777777;
+	border-width: 1px;
+}
+
+/*交替颜色*/
+table.blank th
+{
+	background: #FFFFFF;
+}
+tr.alt th, tr.alt td
+{
+	background: #EAF2D3;
+}
+
+/* 右对齐 */
+td.rgt
+{
+	text-align: right;
+}

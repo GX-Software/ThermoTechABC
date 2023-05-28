@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<link rel='apple-touch-icon' href='img/icon-h.png' type='image/png' />
+<link rel='shortcut icon' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+<link rel='icon' href='img/icon-h.png' type='image/png' />
+<link rel='bookmark' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "viewport" content = "width = device-width, height = device-height, maximum-scale = 1.0, user-scalable = no" />
+
+<title>小笔记制作器 V1.0</title>
+
+<link rel = "stylesheet" type = "text/css" href="css/style.css" />
+
+<style type="text/css">
+textarea {
+	font-family : Microsoft YaHei, SimHei, sans-serif;
+	resize : none;
+	overflow : auto;
+}
+
+table.align {
+	width : 100%;
+	
+	border-spacing:0px;
+	border-style: none;
+	border-width: 0px;
+}
+
+th.align, td.align {
+	border-spacing:0px;
+	border-style: none;
+	border-width: 0px;
+	text-align: left;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>
+	小笔记段落制作
+</h2>
+
+<p>
+<table class = "align">
+	<tbody>
+		<tr>
+			<th class = "align">输入</th>
+			<th class = "align">结果</th>
+		</tr>
+		<tr>
+			<td class = "align"><textarea id = "txt" rows = 10 style = "width : 98%"></textarea></td>
+			<td class = "align"><textarea id = "result" rows = 10 style = "width : 98%;" readonly = "readonly"></textarea></td>
+		</tr>
+	</tbody>
+</table>
+</p>
+
+<p>
+	tab数量：<input type = "number" id = "tabs" value = "3"></input>
+	起始序号：<input type = "number" id = "begin"></input>
+	<button type = "button" onclick = "begin()">开始转换</button>
+</p>
+
+<h2>
+	小笔记图片转换
+</h2>
+<p>
+	<button type = "button" id = "fileb" onclick = "upload()">点我上传</button>
+	<input type = "file" accept="image/*" id = "files" style = "display : none;" onchange = "readImg(this)"></input>
+</p>
+<p>
+	<textarea id = "data" rows = 12 style = "width : 96%;" readonly = "readonly"></textarea>
+</p>
+
+<hr />
+GX Software 2018-2019<br />
+
+<script>
+function upload()
+{
+	try {
+		document.getElementById('files').click();
+	}
+	catch(e) {
+		alert("上传失败！");
+	}
+}
+
+function begin()
+{
+	var tabs = parseInt(document.getElementById("tabs").value);
+	var tabStr = "";
+	for (var i = 0; i < tabs; i++) {
+		tabStr += "\t";
+	}
+	
+	var start = document.getElementById("begin").value;
+	if (start && start.length) {
+		start = parseInt(start);
+	}
+	else {
+		start = 0;
+	}
+	
+	var str = document.getElementById("txt").value;
+	
+	str = str.replace(/&/g, "&amp;");
+	str = str.replace(/</g, "&lt;");
+	str = str.replace(/>/g, "&gt;");
+	str = str.replace(/\'/g, "&apos;");
+	str = str.replace(/\"/g, "&quot;")
+	
+	str = str.replace(/\r\n/g, "\n");
+	var list = str.split("\n");
+	
+	var result = "";
+	for (var i = 0; i < list.length; i++, start++) {
+		result += ('<para idx="' + start + '">' + list[i] + '</para>');
+		if (i < list.length - 1) {
+			result += "\n";
+			result += tabStr;
+		}
+	}
+	
+	document.getElementById("result").value = result;
+}
+
+function readImg(This)
+{
+	//读取图片内容
+	try {
+		var file = This.files[0], fileType = file.type, reg = new RegExp(/jpg|jpeg|png|gif/);
+	}
+	catch(e) {
+		document.getElementById("data").value = "浏览器过于陈旧，不能支持这个功能T_T";
+		return;
+	}
+	//验证是否是一张图片
+	if(!reg.test(fileType.substr((fileType.lastIndexOf('/')+1)))){
+		alert('不是一张图片');
+		return;
+	}
+	//获取图片src
+	if (window.FileReader) {
+		var fr = new FileReader();
+		fr.onload = function(e){
+			document.getElementById("data").value = fr.result;
+		}
+		//将文件读取为DataURL
+		fr.readAsDataURL(file);
+	}
+}
+</script>
+
+</body>
+</html>

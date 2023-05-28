@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<link rel='apple-touch-icon' href='img/icon-h.png' type='image/png' />
+<link rel='shortcut icon' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+<link rel='icon' href='img/icon-h.png' type='image/png' />
+<link rel='bookmark' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "viewport" content = "width = device-width, height = device-height, maximum-scale = 1.0, user-scalable = no" />
+
+<title>报告造假器 V0.1</title>
+
+<link rel = "stylesheet" type = "text/css" href="css/style.css" />
+
+<script type = "text/javascript" src = "js/common.js"></script>
+<script type = "text/javascript" src = "js/faker.js"></script>
+
+<style>
+th, td {
+	white-space: nowrap;
+}
+</style>
+
+</head>
+
+<body onload = "initFake()">
+
+<h2>
+	报告造假器
+</h2>
+
+<p>
+	请选择校验内容：<br/>
+	<select id = "selectType" onchange = "changeTest(false)"></select>
+</p>
+
+<p>
+	请选择精度等级：<br/>
+	<select id = "selectPrecision"></select>
+</p>
+
+<p id = "rangeP">
+	<span id = "range">请输入量程：</span><br/>
+	<input type = "number" id = "down" maxlength = "8" style = "width : 35%" onclick = "this.select();"></input>至<input type = "number" id = "up" maxlength = "8" style = "width : 35%" onclick = "this.select();"></input>
+</p>
+
+<p id = "setP">
+	<span id = "set">请输入设定点：</span><br/>
+	<input type = "number" id = "stop" maxlength = "8" style = "width : 75%"></input>
+</p>
+
+<p>
+	<input type = "checkbox" id = "ok" checked /><label for = "ok">校前合格</label>
+	<input type = "checkbox" id = "linear" checked /><label for = "linear">线性</label>
+</p>
+
+<p>
+	<button type = "button" class = "allLength" onclick = "beginTest()">开始造假！</button>
+</p>
+
+<h3 style = "text-align: center;">检定记录</h3>
+
+<div style = "overflow-x: auto; width: 100%;"><table id = "statistic" border = "1">
+	<tr class='alt'><th rowspan = '2'>检定点</th><th rowspan = '2'>对应电量<br/>(mA)</th><th colspan = '2'>检定前输出(mA)</th><th colspan = '2'>检定后输出(mA)</th><th colspan = '2'>基本误差(mA)</th><th rowspan = '2'>回程误差<br/>(mA)</th></tr>
+	<tr class='alt'><th>正向</th><th>反向</th><th>正向</th><th>反向</th><th>正向</th><th>反向</th></tr>
+</table></div>
+
+<h3 style = "text-align: center;">检定结果</h3>
+<div style = "overflow-x: auto; width: 100%;"><table id = "result" border = "1">
+	<tr class='alt'><th>项目</th><th>允许值<br/>(mA)</th><th>实际最大值<br/>(mA)</th><th>结论</th><th colspan = '2'>校前（对应画√）</th></tr>
+	<tr><th>基本误差</th><td></td><td></td><td>合格</td><td rowspan = '2'>合格</td><td rowspan = '2'>不合格</td></tr>
+	<tr><th>回程变差</th><td></td><td></td><td>合格</td></tr>
+</table></div>
+
+<hr />
+<small>当前版本：V0.1</small><br />
+GX Software 2018-2020
+
+</body>
+</html>

@@ -1,0 +1,676 @@
+﻿<note>
+	<item>
+		<title>DCS模拟量卡件接线方法</title>
+		<text>
+			<para idx="0" bold>OC6000e：</para>
+			<para idx="1">热电偶接法：B+、C-</para>
+			<para idx="2">热电阻接法：C接共用端</para>
+			<para idx="3">模拟量供电接法：A+、B-</para>
+			<para idx="4">模拟量不供电接法：B+、C-</para>
+			<para idx="5" bold>Nexus：</para>
+			<para idx="6">热电偶接法：+接+、-接-</para>
+			<para idx="7">热电阻接法：+接共用端，-和R接另两根</para>
+			<para idx="8">模拟量供电接法：3+、1-</para>
+			<para idx="9">模拟量不供电接法：1+、2-</para>
+		</text>
+	</item>
+	<item>
+		<title>ROTORK-IQ电动门开关方式接线</title>
+		<key>罗托克</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：33、5</para>
+			<para idx="1">开指令：35、5</para>
+			<para idx="2">关反馈：6、7</para>
+			<para idx="3">开反馈：8、9</para>
+			<para idx="4">短接线：4、36</para>
+			<para idx="5">自保持短接：5、34（当阀门非中停门时短接）</para>
+			<para idx="6">失电报警：42，43（监视继电器常闭点）</para>
+		</text>
+	</item>
+	<item>
+		<title>ROTORK-IQ电动门模拟方式接线</title>
+		<key>罗托克</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">短接线：5、39</para>
+			<para idx="1">短接线：4、41</para>
+			<para idx="2">模拟指令：26+，27-</para>
+			<para idx="3">模拟反馈：22+，23-</para>
+			<para idx="4">失电报警：42，43（监视继电器常闭点）</para>
+		</text>
+	</item>
+	<item>
+		<title>ABB定位器接线</title>
+		<key>气动门</key>
+		<text>
+			<para idx="0">模拟输入：+11/-12</para>
+			<para idx="1">模拟输出：+31/-32</para>
+		</text>
+	</item>
+	<item>
+		<title>ABB定位器整定</title>
+		<key>气动门</key>
+		<key>自适应</key>
+		<text>
+			<para idx="0">【快速整定】：长按“Enter”5秒进入角行程自动整定功能“ADJ_ROT”，再长按“Enter”3秒开始整定；长按“Mode”5秒进入直行程自动整定功能“ADJ_LIN”，再长按“Mode”3秒开始整定。整定结束后自动切换回P1.1控制模式。</para>
+			<para idx="1">同时按下“上”“下”键，点按“Enter”，3秒后进入菜单。按下“Enter”和“Mode”的同时按“上”“下”键为程序切换（切换Px.y中的x）；按下““Mode”的同时按“上”“下”键为程序子功能切换（切换Px.y中的y）。</para>
+			<para idx="2">正常工作模式推荐使用1.1CTRL_FIX（固定式控制），1.0模式在调节效果较差时使用，但会改变调节器参数。</para>
+			<para idx="3">P1.1:自动整定。</para>
+			<para idx="4">P2.3：阀门动作，4mA或20mA分别对应0%或100%，一般为DIRECT，即4mA对应0%。</para>
+			<para idx="5" bold="true">P3.2：零点位置，反馈轴在执行机构关闭时的方向，当反馈杆安装在定位器左侧时，应选择为CTCLOCKW（逆时针）。在安装新定位器前本项必须检查。</para>
+			<para idx="6">P6.0:手动整定下限值，P6.1:手动整定上限值。</para>
+			<para idx="7">P7.0/7.1：比例系数，P7.2/7.2：积分时间，P7.6：容差带，P7.7：死区设置。</para>
+			<para idx="8">P11.1：恢复出厂设置。</para>
+		</text>
+	</item>
+	<item>
+		<title>恒春电动门高级配置</title>
+		<key>扬州</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">就地控制自保持：bC→AC↓rr→[NL]，OF为点动，ON为保持。</para>
+			<para idx="1">远程开关控制点动方式：bC→AC↓rr→[Nr]，OF为点动，ON为保持。</para>
+			<para idx="2">默认设置1：bC→dC↓[d1]，将限位归零。</para>
+		</text>
+	</item>
+	<item>
+		<title>恒春电动门故障信息</title>
+		<key>扬州</key>
+		<key>执行机构</key>
+		<img>data:image/jpeg;base64,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</img>
+		<text>
+			<para idx="0">A1：【1】远程ESD信号有效；【2】电机过热；【3】电机过流；【4】开阀时力矩保护；【5】关阀时力矩保护；【6】远程模拟信号丢失；【7】电机启动超时/阀门故障；【8】力矩传感器故障。【左半圈全亮】限位信息丢失，需重新定位。【全部亮】则参数出错，需进行默认设置1。</para>
+			<para idx="1">A2：【1】远程开阀信号有效；【2】远程关阀信号有效；【3】ESD信号有效；【4】远程停止信号有效；【5】关阀联锁信号有效；【6】开阀联锁信号有效；【7】远程控制保持模式；【8】就地控制保持模式。</para>
+			<para idx="2">A3：【1】阀位传感器A；【2】阀位传感器B；【3】选择停止工作模式；【4】选择就地工作模式；【5】选择远程工作模式；【6】电池电量低；【7】电源故障；【8】电源缺相。</para>
+			<para idx="3">A4：【1】-【8】分别为S1~S8继电器闭合。</para>
+			<para idx="4">A5：【1】上电复位；【2】外部复位；【3】内部掉电复位；【4】内部看门狗复位。</para>
+		</text>
+	</item>
+	<item>
+		<title>恒春电动门开关方式接线</title>
+		<key>扬州</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：19、4</para>
+			<para idx="1">开指令：21、4</para>
+			<para idx="2">关反馈：6、7</para>
+			<para idx="3">开反馈：8、9</para>
+			<para idx="4">短接线：5、17</para>
+			<para idx="5">故障：14、15</para>
+		</text>
+	</item>
+	<item>
+		<title>ROTORK-AWT电动门点动方式接线</title>
+		<key>机械罗托克</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：33、5</para>
+			<para idx="1">开指令：35、5</para>
+			<para idx="2">关反馈：8、9</para>
+			<para idx="3">开反馈：15、16</para>
+			<para idx="4">短接线：4、36</para>
+			<para idx="5">失电监视：24、41</para>
+		</text>
+	</item>
+	<item>
+		<title>ROTORK-AWT电动门保持方式接线</title>
+		<key>机械罗托克</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：33、5</para>
+			<para idx="1">开指令：35、5</para>
+			<para idx="2">关反馈：8、9</para>
+			<para idx="3">开反馈：15、16</para>
+			<para idx="4">短接线：4、36</para>
+			<para idx="5">自保持短接：5、34</para>
+			<para idx="6">失电监视：24、41</para>
+			<para idx="7">位置反馈：23+，14-</para>
+		</text>
+	</item>
+	<item>
+		<title>博睿B系列Q2/A2型电动门开关方式接线</title>
+		<key>尖峰</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：7、11</para>
+			<para idx="1">开指令：8、11</para>
+			<para idx="2">关反馈：14、18（关闭合），或15、18（关断开）</para>
+			<para idx="3">开反馈：16、18（开闭合），或17、18（开断开）</para>
+			<para idx="4">故障：3、4（故障断开）</para>
+			<para idx="5">远方就地指示：19、20（远方闭合）</para>
+			<para idx="6">自保持：短接9、11，否则不需短接线</para>
+		</text>
+	</item>
+	<item>
+		<title>博睿B系列Q2/A2型电动门调节方式接线</title>
+		<key>尖峰</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">输入指令：23+、24-</para>
+			<para idx="1">输出阀位：21+、22-</para>
+			<para idx="2">故障：3、4（故障断开）</para>
+			<para idx="3">远程模拟方式短接线：11、10</para>
+		</text>
+	</item>
+	<item>
+		<title>博睿B系列3/5/6型电动门开关方式接线</title>
+		<key>尖峰</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：22、26</para>
+			<para idx="1">开指令：23、26</para>
+			<para idx="2">关反馈：4、5（关闭合），或6、7（关断开）</para>
+			<para idx="3">开反馈：8、9（开闭合），或10、11（开断开）</para>
+			<para idx="4">故障：30、32（故障闭合），或31、32（故障断开）</para>
+			<para idx="5">远方就地指示：15、16（远方闭合）</para>
+			<para idx="6">自保持：短接24、26，否则不需短接线</para>
+		</text>
+	</item>
+	<item>
+		<title>博睿B系列3/5/6型电动门调节方式接线</title>
+		<key>尖峰</key>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">输入指令：27+、28-</para>
+			<para idx="1">输出阀位：13+、14-</para>
+			<para idx="2">故障：30、32（故障闭合），或31、32（故障断开）</para>
+			<para idx="3">远程模拟方式短接线：26、25</para>
+		</text>
+	</item>
+	<item>
+		<title>西门子定位器接线</title>
+		<key>Siemens气动门</key>
+		<key>自适应</key>
+		<text>
+			<para idx="0">模拟输入：+6/-8</para>
+			<para idx="1">模拟输出：+61/-62</para>
+		</text>
+	</item>
+	<item>
+		<title>西门子定位器整定</title>
+		<key>Siemens气动门</key>
+		<key>自适应</key>
+		<text>
+			<para idx="0">长按小手键5秒进入组态方式，短按小手键切换各程序。</para>
+			<para idx="1">YFCT为执行器类型，WAY为直行程。</para>
+			<para idx="2">YAGL为额定反馈角。</para>
+			<para idx="3">YWAY为阀杆范围。</para>
+			<para idx="4">INITA为自动初始化，按“+”键5秒以上自动开始，等待结束后短按小手键保存退出。</para>
+			<para idx="5">长按小手键5秒退出组态方式。</para>
+		</text>
+	</item>
+	<item>
+		<title>TSI卡件型号</title>
+		<text>
+			<para idx="0">转速/键相：MMS 6312</para>
+			<para idx="1">偏心：MMS 6220</para>
+			<para idx="2">轴位移/胀差：MMS 6210</para>
+			<para idx="3">轴振：MMS 6110</para>
+			<para idx="4">盖振：MMS 6120</para>
+			<para idx="5">热膨胀：DF9032</para>
+		</text>
+	</item>
+	<item>
+		<title>TSI卡件分布情况</title>
+		<text>
+			<para idx="0" bold>主机：</para>
+			<para idx="1">每个轴承的X、Y向振动在一张卡上</para>
+			<para idx="2">每两个盖振在一张卡上</para>
+			<para idx="3">#1、#3轴位移各在一张卡上（只用了1通道）</para>
+			<para idx="4">高压缸胀差和#2轴位移在一张卡上</para>
+			<para idx="5">低压缸胀差在一张卡上</para>
+			<para idx="6">键相和零转速在一张卡上（键相在1通道）</para>
+			<para idx="7">偏心在一张卡上（1通道）</para>
+			<para idx="8" bold>小机：</para>
+			<para idx="9">#1、#2TSI转速在一张卡上，#3TSI转速和键相在一张卡上</para>
+			<para idx="10">零转速在一张卡上（1通道）</para>
+			<para idx="11">偏心在一张卡上（1通道）</para>
+			<para idx="12">两个轴位移在一张卡上</para>
+			<para idx="13">#1、#2轴承的X、Y向振动在一张卡上，#3轴振在一张卡上（1通道）</para>
+		</text>
+	</item>
+	<item>
+		<title>保护投退记录单填法</title>
+		<text>
+			<para idx="0">记录表格位于《SH-20602.03-20180627-Rev.1_技术监督管理标准 第3部分：热工监督》附录A处</para>
+			<para idx="1">签发：车间主任</para>
+			<para idx="2">审核：设备部主任</para>
+			<para idx="3">批准：总工程师</para>
+			<para idx="4">许可：当值值长</para>
+			<para idx="5">执行：热控工作负责人</para>
+			<para idx="6">监护：运行人员（一般为机长）</para>
+			<para idx="7">恢复许可：当值值长</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN各化学表计校验合格标准</title>
+		<key>斯旺</key>
+		<key>溶解氧</key>
+		<key>酸度</key>
+		<key>AMU</key>
+		<key>钠</key>
+		<text>
+			<para idx="0">【1】pH表计：零点：±30~±60；斜率55~65。</para>
+			<para idx="1">【2】pNa表计：零点：100~140；斜率55~60。</para>
+			<para idx="2">【3】O2表计：饱和度：＞100%；电流24~41mA。</para>
+		</text>
+	</item>
+	<item>
+		<title>化学表计投运规定</title>
+		<key>化水</key>
+		<key>水汽采样间</key>
+		<key>精处理</key>
+		<text>
+			<para idx="0">高速混床投运4小时后，投运精处理全部表计（只要有水样就可以投）；</para>
+			<para idx="1">锅炉点火前1小时，投运除氧器入口pH表；</para>
+			<para idx="2">机组冲转前1小时，投运省煤器入口氢电导率、主蒸汽氢电导率、除氧器入口溶氧表、除氧器出口溶氧表；</para>
+			<para idx="3">机组并网后，投运除凝结水（包括小机）外全部表；</para>
+			<para idx="4">机组并网后8小时，全部化学表计投运。</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN氧表操作</title>
+		<key>斯旺</key>
+		<key>O2</key>
+		<key>溶解氧</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">报警：Message→Pending Errors【1.1】。</para>
+			<para idx="1">校准历史：Diagnostics→Sensors→Oxytrace G→Cal. History【2.2.1.5】，正常为饱和度100%、电流24-41μA。</para>
+			<para idx="2">空气校准：Maintenance→Calibration【3.1】。</para>
+			<para idx="3">模拟输出：Maintenance→Simulation→Signal Output 1/2【3.2.4-3.2.5】。</para>
+			<para idx="4">时间设定：Maintenance→Set Time【3.3】。</para>
+			<para idx="5">设置电流环：Installation→Signal Outputs→Signal Output 1/2→Current Loop【5.2.X.2】。</para>
+			<para idx="6">设置量程：Installation→Signal Outputs→Signal Output 1/2→Scaling【5.2.X.40】。</para>
+			<para idx="7">流量设置：Installation→Sensors→Miscellaneous→Flow【5.1.1】。</para>
+			<para idx="8">加偏置：Installation→Sensors→Miscellaneous→O2 Offset【5.1.2】。</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN氧表接线</title>
+		<key>斯旺</key>
+		<key>O2</key>
+		<key>溶解氧</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">电极接线：黑19，棕20，绿21，白22</para>
+			<para idx="1">模拟输出：13+，12-</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN氧表故障代码</title>
+		<key>斯旺</key>
+		<key>O2</key>
+		<key>溶解氧</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">E001：高报警</para>
+			<para idx="1">E002：低报警</para>
+			<para idx="2">E003：饱和度高报警</para>
+			<para idx="3">E004：饱和度低报警</para>
+			<para idx="4">E007：样水温度高报警</para>
+			<para idx="5">E008：样水温度低报警</para>
+			<para idx="6">E009：样水流量高</para>
+			<para idx="7">E010：样水流量低</para>
+			<para idx="8">E011：温度电极短路</para>
+			<para idx="9">E012：温度电极断路</para>
+			<para idx="10">E013：箱体温度高</para>
+			<para idx="11">E014：箱体温度低</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN pH表操作</title>
+		<key>斯旺</key>
+		<key>pH</key>
+		<key>酸度</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">报警：Message→Pending Errors【1.1】。 </para>
+			<para idx="1">校准历史：Diagnostics→Sensors→Oxytrace G→Cal. History【2.2.1.5】，正常为零点&lt;±30mV、斜率55-65mV/pH。</para>
+			<para idx="2">pH标液校准：Maintenance→Calibration→Standard pH or ORP【3.1.2】。</para>
+			<para idx="3">模拟输出：Maintenance→Simulation→Signal Output 1/2【3.2.4-3.2.5】。</para>
+			<para idx="4">时间设定：Maintenance→Set Time【3.3】。</para>
+			<para idx="5">设置电流环：Installation→Signal Outputs→Signal Output 1/2/3→Current Loop【5.2.X.2】。</para>
+			<para idx="6">流量设置：Installation→Sensors→Flow【5.1.1】。</para>
+			<para idx="7">是否有温度电极：Installation→Sensors→Temp. sensor yes/no【5.1.3.1】。</para>
+			<para idx="8">温度补偿：Installation→Sensors→Temp. compensation【5.1.40】。</para>
+			<para idx="9">pH标液设定：Installation→Sensors→Standards pH→Standard 1/2【5.1.5.1-5.1.5.2】</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN pH表接线</title>
+		<key>斯旺</key>
+		<key>pH</key>
+		<key>酸度</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">pH电极接线：蓝21，白22</para>
+			<para idx="1">参比电极接线：蓝23，白24</para>
+			<para idx="2">温度电极接线：蓝20，白19</para>
+			<para idx="3">模拟输出：13+，12-</para>
+		</text>
+	</item>
+	<item>
+		<title>SWAN pH表故障代码</title>
+		<key>斯旺</key>
+		<key>pH</key>
+		<key>酸度</key>
+		<key>AMU</key>
+		<text>
+			<para idx="0">E001：高报警</para>
+			<para idx="1">E002：低报警</para>
+			<para idx="2">E007：样水温度高报警</para>
+			<para idx="3">E008：样水温度低报警</para>
+			<para idx="4">E009：样水流量高</para>
+			<para idx="5">E010：样水流量低</para>
+			<para idx="6">E011：温度电极短路</para>
+			<para idx="7">E012：温度电极断路</para>
+			<para idx="8">E013：箱体温度高</para>
+			<para idx="9">E014：箱体温度低</para>
+		</text>
+	</item>
+	<item>
+		<title>精处理各电磁阀箱接线说明</title>
+		<key>混床</key>
+		<key>粉末过滤器</key>
+		<text>
+			<para idx="0">X1：连接外来的24V直流电源，经双联开关QF01，为整个控制柜送电。</para>
+			<para idx="1">X2：下口为阀门反馈，上口奇数端均来自X1:3（24V+），偶数端去往阀位指示灯和K01-K12开关到位继电器线圈。</para>
+			<para idx="2">X3：下口去往DCS阀位反馈，上口来自K01-K12常开触点。</para>
+			<para idx="3">X4：下口为远控指令输入，上口奇数端均来自X1:3（24V+），偶数端去往就地/远控继电器K101的常闭触点。</para>
+			<para idx="4">K101的常开触点分别接到各就地控制旋钮的开位置上。</para>
+		</text>
+	</item>
+	<item>
+		<title>重要设备位置及定值（小机/汽泵部分）</title>
+		<text>
+			<para idx="0">【真空低停机】×3，≥33.64kPa，小机立盘。</para>
+			<para idx="1">【真空低报警】×1，≥21.3kPa，小机立盘。</para>
+			<para idx="2">【润滑油压低停机】×3，≤0.07MPa，小机立盘。</para>
+			<para idx="3">【润滑油压低报警】×1，≤0.11MPa，小机立盘。</para>
+			<para idx="4">【润滑油压低启备用泵】×1，≤0.10MPa，小机立盘。</para>
+			<para idx="5">【润滑油压低启直流泵】×1，≤0.09MPa，小机立盘。</para>
+			<para idx="6">【润滑油压低停盘车】×1，≤30kPa，小机立盘。</para>
+			<para idx="7">【小机进口母管压力】×1，小机汽侧。</para>
+			<para idx="8">【润滑油供油压力】×1，小机汽侧。</para>
+			<para idx="9">【小机排汽真空度】×1，小机汽侧。</para>
+			<para idx="10">【润滑油压力低启事故油泵】×1，≤90kPa，小机汽侧。</para>
+			<para idx="11">【汽泵中间抽头管道压力】×1，小机凝汽器旁。</para>
+			<para idx="12">【进口压力低停小机】×1，≤0.5MPa，小机凝汽器旁。</para>
+			<para idx="13">【进口压力】×1，小机凝汽器旁。</para>
+			<para idx="14">【出口压力】×1，小机凝汽器旁。</para>
+			<para idx="15">【主泵入口滤网差压】×1，小机凝汽器旁。</para>
+			<para idx="16">【低压用蒸汽流量】×1，小机凝汽器旁。</para>
+			<para idx="17">【主泵入口流量】×2，0m主油箱东南侧。</para>
+		</text>
+	</item>
+	<item>
+		<title>重要压力表量程及精度</title>
+		<text>
+			<para idx="0">【小机入口水压力】6MPa，1.6</para>
+			<para idx="1">【小机出口水压力】60MPa，1.6</para>
+			<para idx="2">【凝补水泵出口】1.6MPa，1.6</para>
+			<para idx="3">【凝补水泵入口】0.6MPa，1.6</para>
+			<para idx="4">【冲洗水泵入口】1MPa，1.6</para>
+			<para idx="5">【汽泵平衡水压】6MPa，1.6</para>
+			<para idx="6">【汽泵出口水压】60MPa，1.6</para>
+			<para idx="7">【汽泵进油母管压力】0.6MPa，1.6</para>
+			<para idx="8">【汽泵入口水压】6MPa，1.6</para>
+			<para idx="9">【汽泵抽头水压】16MPa，1.6</para>
+		</text>
+	</item>
+	<item>
+		<title>混合仿真试验注意事项</title>
+		<key>混仿</key>
+		<text>
+			<para idx="0">混合仿真试验前，应确认直流电已经送上。</para>
+			<para idx="1">主机挂闸条件，从ETS画面外拖3个按钮进来，退出凝汽器真空低保护和发电机故障保护。</para>
+			<para idx="2">小机挂闸条件，需要从组态中强制跳闸条件（位于DPU16/18的“MEH跳机逻辑”页中）和启动允许（位于DPU16/18的“脱扣复位”页中），同时在小机立盘中拨开润滑油压力低刀闸。</para>
+			<para idx="3">混合仿真逻辑位于DPU80，在DPU29中连接仿真的发电机功率、高主进汽压力、调节级后蒸汽压力、转速、发电机并网各点。</para>
+			<para idx="4">挂闸后汽轮机启动顺序为：(1)挂闸；(2)选择启动方式“中压缸启动”；(3)投入“自动”；(4)运行（此时所有主汽门全开）；(5)控制设定中设置“目标值”和“升速率”，随后“进行”，开始升速，各调门打开；(6)等待转速达到3000rpm，在“仿真”中选择“并网”，机组带初负荷；(7)控制设定中设置“目标值”（此时为流量百分比）和“升负荷率”，随后“进行”，开始带负荷，此时可以在仿真中适当调整主汽压力。(8)投入功率回路可将目标值变化为功率大小显示，但是实际运行中采取的是CCS控制。</para>
+			<para idx="5">阀门活动试验分为全行程试验和松动试验（关闭85%试验）。在进行前，需先投入“进行阀门试验”，随后才能选择试验内容。选择好需要试验的阀门后，点击“关闭”则开始试验，试验结束后，若不能自动恢复，需要点击“复位”以恢复阀门状态，复位按钮的投入会自动退出，退出后才能选择其它试验阀门。在做全行程试验时，各调门在关闭至10%后会动作快关电磁阀以快速关闭；中压缸部分应选择中主门来进行测试，会首先关闭对应中调门后联关中主门，复位后顺序相反，即先打开中主门后联开中调门。</para>
+		</text>
+	</item>
+	<item>
+		<title>DCS逻辑组态设计注意事项</title>
+		<key>OC6000e</key>
+		<key>Nexus</key>
+		<text>
+			<para idx="0">【1】重要测点应分散至不同卡件、重要设备的控制块应分散至不同DPU。</para>
+			<para idx="1">【2】重要设备的启停状态可采用合闸、非跳闸、电流信号三选二。</para>
+			<para idx="2">【3】自调切手动的条件包括：阀位反馈/被控量反馈品质坏、设定值与被控量偏差大、阀位指令反馈偏差大。</para>
+			<para idx="3">【4】现场采用的I/O卡件类型分别为：MMAV（一般AI卡件）、MRTD（温度AI卡件）、MDDO（一般DO卡件）、MTDI（一般DI卡件）、MVAO（一般AO卡件）。</para>
+			<para idx="4">【5】泵的指令信号一般为脉冲信号。</para>
+			<para idx="5">【6】AND块的输入默认为1、1，在新增AND块时应尤为注意。</para>
+			<para idx="6">【7】液位的开关信号可以加延时，以克服在动作值处的频繁变化。</para>
+		</text>
+	</item>
+	<item>
+		<title>北京科热三合一探头接线说明</title>
+		<key>机力塔</key>
+		<key>机力冷却塔</key>
+		<key>辅机循环水</key>
+		<key>尖峰冷却循环水</key>
+		<text>
+			<para idx="0">棕色：24VDC+。</para>
+			<para idx="1">红色：24VDC-，公共负端。</para>
+			<para idx="2">黄色/灰色：油温+，量程0～100℃。（批次不同颜色不同）</para>
+			<para idx="3">蓝色：振动+，量程0～20mm/s。</para>
+			<para idx="4">黑色：油位+，量程-10～40mm，其中零位为正常油位下限。</para>
+			<para idx="5">输出信号均为4-20mA，配置通道时应配置为不供电。</para>
+		</text>
+	</item>
+	<item>
+		<title>尖峰机力塔三合一探头接线说明</title>
+		<key>机力塔</key>
+		<key>机力冷却塔</key>
+		<key>辅机循环水</key>
+		<key>尖峰冷却循环水</key>
+		<text>
+			<para idx="0">棕色：24VDC+。</para>
+			<para idx="1">紫色：24VDC-，公共地线。</para>
+			<para idx="2">橙色：油温+，量程0～100℃。</para>
+			<para idx="3">蓝色：振动+，量程0～20mm/s。</para>
+			<para idx="4">黄色：油位+，量程-10～40mm，其中零位为正常油位下限。</para>
+			<para idx="5">输出信号均为4-20mA，配置通道时应配置为不供电。</para>
+		</text>
+	</item>
+	<item>
+		<title>轴系探头安装要领</title>
+		<key>高胀低胀</key>
+		<key>高压缸胀差低压缸胀差</key>
+		<text>
+			<para idx="0">转速、零转速、超速、键相的安装间隙为0.8-1.0mm。</para>
+			<para idx="1">偏心、胀差、轴位移、轴振动大安装间隙电压为-12VDC。</para>
+			<para idx="2">转子紧贴工作瓦时轴向位移探头间隙为测量零点，转子膨胀的方向为正方向（即靠近时增大）。</para>
+			<para idx="3">机组冷态时胀差探头间隙为测量零点。</para>
+			<para idx="4">探头电阻应不大于10Ω。</para>
+		</text>
+	</item>
+	<item>
+		<title>调速系统指令及反馈故障判断</title>
+		<key>DEH</key>
+		<key>MEH</key>
+		<key>主机小机油动机</key>
+		<key>反馈电流</key>
+		<text>
+			<para idx="0" bold="true">【对于Nexus系统】</para>
+			<para idx="1">伺服阀正常工作时，测量指令线两端电压为±1.5VDC，当指令和反馈偏差较小时，电压几乎为0，偏差越大，电压绝对值越大。其中，开启方向为正电压，关闭方向为负电压。</para>
+			<para idx="2">伺服阀任意一个线圈断开时，画面指示坏点，测量指令线两端电压为±14VDC左右，阀门关闭2~3%。</para>
+			<para idx="3">LVDT任何线断开，画面均指示坏点。</para>
+			<para idx="4" bold="true">【对于OC6000e系统】</para>
+			<para idx="5">伺服阀正常工作时，和Nexus系统现象完全一致。</para>
+			<para idx="6">伺服阀任意一个线圈断开时，画面显示指令电流变0，但不变坏，测量指令线两端电压为±14VDC左右，阀门关闭2~3%。</para>
+		</text>
+	</item>
+	<item>
+		<title>真空严密性试验</title>
+		<text>
+			<para idx="0">凝汽器真空正常（高于89kPa）并处于稳定状态。</para>
+			<para idx="1">机组负荷稳定在80%额定负荷以上。</para>
+			<para idx="2">备用真空泵应良好运行。</para>
+			<para idx="3">真空下降至86kPa或排汽温度超过80℃，应立即停止试验，打开水环真空泵入口蝶阀，恢复真空系统运行。</para>
+		</text>
+	</item>
+	<item>
+		<title>E+H导波雷达物位仪使用</title>
+		<key>高加水位计高加液位计</key>
+		<key>低加水位计低加液位计</key>
+		<key>高压加热器</key>
+		<key>低压加热器</key>
+		<text>
+			<para idx="0">面板上有三个按键：“-”“+”“E”。</para>
+			<para idx="1">“-”：上翻菜单、左移光标。</para>
+			<para idx="2">“+”：下翻菜单、右移光标。</para>
+			<para idx="3">“E”：短按开启菜单、进入编辑状态，长按打开帮助文本、确认参数修改。</para>
+			<para idx="4">“-/+”组合键：回退、退出编辑状态。</para>
+			<para idx="5">“-/+/E”组合键：改变液晶显示对比度。</para>
+		</text>
+	</item>
+	<item>
+		<title>西门子流量计使用</title>
+		<key>Siemens流量</key>
+		<img>data:image/jpeg;base64,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</img>
+		<text>
+			<para idx="0">共有六个按键，1-6依次为转换键、前进键、后退键、改换键、选择键、锁定/开锁键。</para>
+			<para idx="1">转换键按2秒可进入设置菜单，短按为返回。锁定/开锁键相当于确认键，可进入子菜单。</para>
+			<para idx="2">进入菜单需要输入密码，密码为1000。</para>
+			<para idx="3">检查序列号：进入Product idenfity，对比序列号和铭牌是否一致。</para>
+			<para idx="4">清空流量累计值：在Reset mode→Totalizer 1 reset中清空（清空过程中最下排会短暂显示busy）。</para>
+			<para idx="5">修改流量累计值：在Reset mode→Totalizer 1 preset中修改数值，修改完成后需要短按前进键，待最下排显示Activate后再短按锁定/开锁键即完成设定。</para>
+			<para idx="6">修改小数点和单位：在Basic setting→Totalizer中修改。</para>
+			<para idx="7">启停空管检测：Basic setting→Empty中开启或关闭。</para>
+			<para idx="8">检查表头故障：在Service mode→Status log中查看。</para>
+		</text>
+	</item>
+	<item>
+		<title>主机盘车装置使用</title>
+		<text>
+			<para idx="0">检查主机润滑油温、油压正常；至少一台顶轴油泵运行，油压&gt;7MPa；检查密封油系统正常。</para>
+			<para idx="1">将盘车系统送电，在控制盘上确认“润滑油压正常”“高压主汽阀全关”“顶轴油压正常”“电源”灯亮。</para>
+			<para idx="2">将控制把手打到“手动盘车”，按下“盘车投入”按钮，此时“投入电磁阀带电”灯亮，观察推动连杆开始投入动作。</para>
+			<para idx="3">当“啮合到位”灯亮后，按“盘车电机启动”按钮，“盘车电机运行”灯亮，观察盘车电流正常后将控制把手打到“自动盘车”。</para>
+		</text>
+	</item>
+	<item>
+		<title>博睿电动门保持方式接线</title>
+		<key>执行机构</key>
+		<text>
+			<para idx="0">关指令：21、22</para>
+			<para idx="1">开指令：21、23</para>
+			<para idx="2">关反馈：17、18</para>
+			<para idx="3">开反馈：19、20</para>
+		</text>
+	</item>
+	<item>
+		<title>北京瑞普三元超声波物位计使用</title>
+		<text>
+			<para idx="0">同时按下SEL、MOV键进入设置状态，进入设置状态时，左边没有小桃心。</para>
+			<para idx="1">在设置状态下，按SEL可选择要设置的参数。显示的参数依次是安装高度、输出量程、内部密码。</para>
+			<para idx="2">MOV选择设置的位值，当该位变暗时，按INC来改变数字（数字在0-9增加循环）。</para>
+			<para idx="3">安装高度：从探头发射面到容器底部的距离。</para>
+			<para idx="4">输出量程：被测物位的最大值，对应为20mA的电流输出。</para>
+			<para idx="5">内部密码：不必设定，直接按SEL离开此参数即可。</para>
+			<para idx="6">设置完成后同时按下SEL、MOV键退出参数设置状态。</para>
+			<para idx="7">测量状态时，仪表进行正常的物位测量，可按SEL键切换显示物位值、空位值、温度值。</para>
+		</text>
+	</item>
+	<item>
+		<title>XACT5000D氢气纯度分析仪使用</title>
+		<key>光力</key>
+		<key>氢纯度</key>
+		<text>
+			<para idx="0">在测量状态下长按“ESC”键进入菜单。</para>
+			<para idx="1">SELECT GAS?：按“ENTER”键进入，可选择“H2 IN AIR?”“AIR IN CO2”“H2 IN O2”。</para>
+			<para idx="2">OUTPUT?：按“ENTER”键进入，显示“4mA&lt;--&gt;20mA”，此时4mA闪烁，当4mA闪烁时，按“ENTER”键可以修改4mA对应的氢纯度。在“4mA&lt;--&gt;20mA”界面按“下”键可使20mA闪烁，按“ENTER”键可以修改20mA对应的氢纯度。</para>
+			<para idx="3">ALARMS?：按“ENTER”键进入，显示“LLOW&lt;--&gt;LOW”，可修改报警值。</para>
+			<para idx="4">CALIBRATION?：按“ENTER”键后显示输入密码，密码为8。</para>
+		</text>
+	</item>
+	<item>
+		<title>东崎TE-W温控仪表使用</title>
+		<key>TOKY</key>
+		<text>
+			<para idx="0">上电后在正常测量控制模式下，长按“SET”键大于3秒可以进入菜单参数查看模式。</para>
+			<para idx="1">在菜单中需修改的内容：INP输入测量信号类型选择，可选K、Pt等；AL1第一路报警值；AL2第二路报警值。</para>
+			<para idx="2">在菜单查看模式下，每短按“SET”键可以循环查看菜单参数。</para>
+			<para idx="3">在菜单查看模式下短按“AT”键可以闪动所查看到的菜单参数值进入参数修改模式，并且每短按一次可以向左移动一位；以此循环。</para>
+			<para idx="4">在参数修改模式下，每短按“上”或“下”按键一次就可以使闪动的数据位加一或减一。</para>
+			<para idx="5">在参数修改模式下，参数修改好后短按“SET”确认保存所修改的参数，并退出到菜单查看模式下。</para>
+			<para idx="6">在正常测量控制模式下，短按“AT”键可以进入修改SV值状态，修改SV值过程与修改菜单参数方法相同。</para>
+		</text>
+	</item>
+	<item>
+		<title>机停炉硬接线备忘录</title>
+		<text>
+			<para idx="0">投退监视所接为常闭点（闭合为退出）；电源监视所接为常开点（断开为带电）。</para>
+			<para idx="1">送往炉侧的共2路MFT信号，供电由汽机电子间提供，线上可能带220VDC。</para>
+			<para idx="2">机停炉所用直流电源为直流I母的第二路电源，电源取自DPU18柜。</para>
+			<para idx="3">4个主汽门关到位送入卡件的共4个信号采用2根公共线+4根信号线方式，动作报警、失电报警、投退监视各采用1对独立线。</para>
+		</text>
+	</item>
+	<item>
+		<title>Windows系统启动后进入指定程序设置</title>
+		<key>注册表</key>
+		<text>
+			<para idx="0">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\shell</para>
+		</text>
+	</item>
+	<item>
+		<title>#1空冷岛环境温度元件位置</title>
+		<text>
+			<para idx="0">位于124、135、154风机处。</para>
+		</text>
+	</item>
+	<item>
+		<title>三熟三能</title>
+		<key>问答</key>
+		<key>备考</key>
+		<key>规程</key>
+		<text>
+			<para idx="0" bold="true">“三熟”指的是：</para>
+			<para idx="1">【1】熟悉系统和设备的构造、性能。【2】熟悉设备的装配工艺，工序和质量标准。【3】熟悉安全施工规程。</para>
+			<para idx="2" bold="true">“三能”指的是：</para>
+			<para idx="3">【1】能掌握钳工工艺。【2】能干与本职工作相关的其他一两种工艺。【3】能看懂图纸并绘制简单零件图。</para>
+		</text>
+	</item>
+	<item>
+		<title>四懂四会</title>
+		<key>问答</key>
+		<key>备考</key>
+		<key>规程</key>
+		<text>
+			<para idx="0" bold="true">“四懂”指的是：</para>
+			<para idx="1">【1】懂火灾的危险性；【2】懂使用消防器材的方法；【3】懂疏散逃生知识；【4】懂扑灭火灾的方法。</para>
+			<para idx="2" bold="true">“四会”指的是：</para>
+			<para idx="3">【1】会报警；【2】会疏散逃生；【3】会使用消防器材；【4】会扑灭初期火灾。</para>
+		</text>
+	</item>
+	<item>
+		<title>四不放过</title>
+		<key>问答</key>
+		<key>备考</key>
+		<key>规程</key>
+		<text>
+			<para idx="0">“四不放过”指的是：</para>
+			<para idx="1">【1】事故原因不清不放过；</para>
+			<para idx="2">【2】事故责任者和广大群众应受到教育而没有受到教育不放过；</para>
+			<para idx="3">【3】没有切实可靠的防范措施不放过；</para>
+			<para idx="4">【4】事故责任者没有受到处理不放过。</para>
+		</text>
+	</item>
+	<item>
+		<title>四不伤害</title>
+		<key>问答</key>
+		<key>备考</key>
+		<key>规程</key>
+		<text>
+			<para idx="0">“四不伤害”指的是：</para>
+			<para idx="1">【1】不伤害自己；</para>
+			<para idx="2">【2】不伤害他人；</para>
+			<para idx="3">【3】不被他人伤害；</para>
+			<para idx="4">【4】保护他人不受伤害。</para>
+		</text>
+	</item>
+</note>

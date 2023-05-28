@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel='apple-touch-icon' href='img/icon-h.png' type='image/png' />
+<link rel='shortcut icon' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+<link rel='icon' href='img/icon-h.png' type='image/png' />
+<link rel='bookmark' href='img/icon-h.ico' type='image/vnd.microsoft.icon' />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "viewport" content = "width = device-width, height = device-height, maximum-scale = 1.0, user-scalable = no">
+
+<link rel = "stylesheet" type = "text/css" href="css/style.css" />
+<style type = "text/css">
+* {
+	margin-bottom: 5px;
+}
+</style>
+
+<title>时间计算器 V0.1</title>
+</head>
+
+<body onload = "init()">
+
+<h2>排污时间计算器</h2>
+
+<p id = "r1" style = "background-color: #ffff00;">
+</p>
+
+<div>
+	现排污时间：<br/><input type = "number" id = "oh" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "om" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分
+</div>
+
+<div>
+	更改至：<br/><input type = "number" id = "nh" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>时<input type = "number" id = "nm" maxlength = "2" style = "width: 3em;" value = "30" onclick = "this.select();"></input>分
+</div>
+
+<div>
+	停电时间：<br/><input type = "number" id = "ch" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "cm" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分
+</div>
+
+<div>
+	希望送电时间：<br/><input type = "number" id = "hh" maxlength = "2" style = "width: 3em;" value = "8" onclick = "this.select();"></input>时<input type = "number" id = "hm" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分
+</div>
+
+<div style = "margin-top: 8px;">
+	<button type = "button" onclick = "check();">生成</input>
+</div>
+
+<hr/>
+<div style = "margin-top: 8px;">
+	计算自<input type = "number" id = "ph" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "pm" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分至<input type = "number" id = "xh" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "xm" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分经过的时间
+</div>
+<div>
+	<button type = "button" onclick = "calc1();">计算</input>
+</div>
+
+<p id = "r2" style = "background-color: #ffff00;">
+</p>
+
+<div style = "margin-top: 8px;">
+	计算自<input type = "number" id = "ah" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "am" maxlength = "2" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分经过<input type = "number" id = "dh" maxlength = "2" style = "width: 3em;" value = "12" onclick = "this.select();"></input>时<input type = "number" id = "dm" maxlength = "4" style = "width: 3em;" value = "0" onclick = "this.select();"></input>分的时间
+</div>
+<div>
+	<button type = "button" onclick = "calc2();">计算</input>
+</div>
+
+<p id = "r3" style = "background-color: #ffff00;">
+</p>
+
+<hr />
+<small>当前版本：V0.1</small><br />
+GX Software 2020
+</body>
+
+<script type = "text/javascript">
+Date.prototype.init = function() {
+	this.setFullYear(1991, 7, 30);
+	this.setSeconds(0, 0);
+}
+
+function init()
+{
+	var d = new Date();
+	document.getElementById("ch").value = d.getHours();
+	document.getElementById("cm").value = d.getMinutes();
+}
+
+function check()
+{
+	var d1 = new Date(), d2 = new Date(), d3 = new Date(), d4 = new Date();
+	
+	var oh = parseInt(document.getElementById("oh").value);
+	if (oh !== oh) {
+		return;
+	}
+	var om = parseInt(document.getElementById("om").value);
+	if (om !== om) {
+		return;
+	}
+	var nh = parseInt(document.getElementById("nh").value);
+	if (nh !== nh) {
+		return;
+	}
+	var nm = parseInt(document.getElementById("nm").value);
+	if (nm !== nm) {
+		return;
+	}
+	var ch = parseInt(document.getElementById("ch").value);
+	if (ch !== ch) {
+		return;
+	}
+	var cm = parseInt(document.getElementById("cm").value);
+	if (cm !== cm) {
+		return;
+	}
+	var hh = parseInt(document.getElementById("hh").value);
+	if (hh !== hh) {
+		return;
+	}
+	var hm = parseInt(document.getElementById("hm").value);
+	if (hm !== hm) {
+		return;
+	}
+	
+	d1.init();
+	d2.init();
+	d3.init();
+	d4.init();
+	d1.setHours(oh);
+	d1.setMinutes(om);
+	d2.setHours(nh);
+	d2.setMinutes(nm);
+	d3.setHours(ch);
+	d3.setMinutes(cm);
+	d4.setHours(hh);
+	d4.setMinutes(hm);
+	
+	var a = d1.getTime(), b = d2.getTime();
+	var d = b - a;
+	if (d < 0) {
+		d += 24 * 60 * 60 * 1000;
+	}
+	d3.setTime(d3.getTime() + d);
+	d4.setTime(d4.getTime() - d);
+	
+	var str = "需停止计时时间：" + (d / 1000 / 60) + "分钟（" + Math.floor(d / 1000 / 60 / 60) + "小时" + (d / 1000 / 60 % 60) + "分钟）<br>";
+	str += "需送电时间：" + d3.getHours() + "时" + d3.getMinutes() + "分<br>";
+	str += "建议停电时间：" + d4.getHours() + "时" + d4.getMinutes() + "分";
+	document.getElementById("r1").innerHTML = str;
+}
+
+function calc1()
+{
+	var ph = parseInt(document.getElementById("ph").value);
+	if (ph !== ph) {
+		return;
+	}
+	var pm = parseInt(document.getElementById("pm").value);
+	if (pm !== pm) {
+		return;
+	}
+	var xh = parseInt(document.getElementById("xh").value);
+	if (xh !== xh) {
+		return;
+	}
+	var xm = parseInt(document.getElementById("xm").value);
+	if (xm !== xm) {
+		return;
+	}
+	
+	var d1 = new Date(), d2 = new Date();
+	d1.init();
+	d2.init();
+	d1.setHours(ph);
+	d1.setMinutes(pm);
+	d2.setHours(xh);
+	d2.setMinutes(xm);
+	var r = d2.getTime() - d1.getTime();
+	if (r < 0) {
+		r += 24 * 60 * 60 * 1000;
+	}
+	
+	var str = "经过的时间：" + (r / 1000 / 60) + "分钟（" + Math.floor(r / 1000 / 60 / 60) + "小时" + (r / 1000 / 60 % 60) + "分钟）";
+	document.getElementById("r2").innerHTML = str;
+}
+
+function calc2()
+{
+	var ah = parseInt(document.getElementById("ah").value);
+	if (ah !== ah) {
+		return;
+	}
+	var am = parseInt(document.getElementById("am").value);
+	if (am !== am) {
+		return;
+	}
+	var dh = parseInt(document.getElementById("dh").value);
+	if (dh !== dh) {
+		return;
+	}
+	var dm = parseInt(document.getElementById("dm").value);
+	if (dm !== dm) {
+		return;
+	}
+	
+	var d1 = new Date();
+	d1.init();
+	d1.setHours(ah);
+	d1.setMinutes(am);
+	d1.setTime(d1.getTime() + (dh * 60 + dm) * 60 * 1000);
+	
+	var str = "计算得出的时间：" + d1.getHours() + "时" + d1.getMinutes() + "分";
+	document.getElementById("r3").innerHTML = str;
+}
+</script>
+</html>
