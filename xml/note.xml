@@ -2,12 +2,12 @@
 	<item>
 		<title>DCS模拟量卡件接线方法</title>
 		<text>
-			<para idx="0" bold>OC6000e：</para>
+			<para idx="0" bold="true">OC6000e：</para>
 			<para idx="1">热电偶接法：B+、C-</para>
 			<para idx="2">热电阻接法：C接共用端</para>
 			<para idx="3">模拟量供电接法：A+、B-</para>
 			<para idx="4">模拟量不供电接法：B+、C-</para>
-			<para idx="5" bold>Nexus：</para>
+			<para idx="5" bold="true">Nexus：</para>
 			<para idx="6">热电偶接法：+接+、-接-</para>
 			<para idx="7">热电阻接法：+接共用端，-和R接另两根</para>
 			<para idx="8">模拟量供电接法：3+、1-</para>
@@ -214,7 +214,7 @@
 	<item>
 		<title>TSI卡件分布情况</title>
 		<text>
-			<para idx="0" bold>主机：</para>
+			<para idx="0" bold="true">主机：</para>
 			<para idx="1">每个轴承的X、Y向振动在一张卡上</para>
 			<para idx="2">每两个盖振在一张卡上</para>
 			<para idx="3">#1、#3轴位移各在一张卡上（只用了1通道）</para>
@@ -222,7 +222,7 @@
 			<para idx="5">低压缸胀差在一张卡上</para>
 			<para idx="6">键相和零转速在一张卡上（键相在1通道）</para>
 			<para idx="7">偏心在一张卡上（1通道）</para>
-			<para idx="8" bold>小机：</para>
+			<para idx="8" bold="true">小机：</para>
 			<para idx="9">#1、#2TSI转速在一张卡上，#3TSI转速和键相在一张卡上</para>
 			<para idx="10">零转速在一张卡上（1通道）</para>
 			<para idx="11">偏心在一张卡上（1通道）</para>
