@@ -112,6 +112,7 @@ function newText(item, findStr)
 function findStart()
 {
 	document.getElementsByClassName("findblock")[0].style.display = "";
+	document.getElementById("find").select();
 }
 
 function endFind()
